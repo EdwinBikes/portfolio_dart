@@ -6,3 +6,5 @@ export 'package:segunda_aplicaicon/screens/home_screen.dart';
 export 'package:segunda_aplicaicon/screens/inputs_screen.dart';
 export 'package:segunda_aplicaicon/screens/listview1.dart';
 export 'package:segunda_aplicaicon/screens/listview2.dart';
+export 'package:segunda_aplicaicon/screens/slider_screen.dart';
+export 'package:segunda_aplicaicon/screens/listview_builder_screen.dart';

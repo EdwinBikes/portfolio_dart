@@ -6,6 +6,10 @@ class CustomImputField extends StatelessWidget {
   final String? helperText;
   final IconData? icon;
   final IconData? suffixIcon;
+  final TextInputType? keyboardType;
+  final bool obscureText;
+  final String formProperty;
+  final Map<String, dynamic> formvalues;
 
   const CustomImputField({
     Key? key,
@@ -14,6 +18,10 @@ class CustomImputField extends StatelessWidget {
     this.helperText,
     this.icon,
     this.suffixIcon,
+    this.keyboardType,
+    this.obscureText = false,
+    required this.formProperty,
+    required this.formvalues,
   }) : super(key: key);
 
   @override
@@ -23,8 +31,11 @@ class CustomImputField extends StatelessWidget {
         autocorrect: true,
         initialValue: '',
         textCapitalization: TextCapitalization.words,
+        keyboardType: keyboardType,
+        obscureText: obscureText,
         onChanged: (value) {
-          print('value: $value');
+          // si quito las llaves {} se ve asi, => formvalues[formProperty] = value;
+          formvalues[formProperty] = value;
         },
         validator: (value) {
           if (value == null) return 'Este campo es requerido';
