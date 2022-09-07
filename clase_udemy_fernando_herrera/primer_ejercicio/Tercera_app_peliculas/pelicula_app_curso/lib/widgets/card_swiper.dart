@@ -1,5 +1,6 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_card_swipper/flutter_card_swiper.dart';
+
 import 'package:pelicula_app_curso/models/models.dart';
 
 class CardSwiper extends StatelessWidget {
@@ -11,17 +12,17 @@ class CardSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    if (this.movies.length == 0) {
-      return Container(
+    if (movies.isEmpty) {
+      return SizedBox(
         width: double.infinity,
         height: size.height * 0.5,
-        child: Center(
+        child: const Center(
           child: CircularProgressIndicator(),
         ),
       );
     }
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: size.height * 0.5,
       child: Swiper(
@@ -42,7 +43,7 @@ class CardSwiper extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: FadeInImage(
-                  placeholder: AssetImage('assets/no-image.jpg'),
+                  placeholder: const AssetImage('assets/no-image.jpg'),
                   image: NetworkImage(movie.fullPosterImg),
                   fit: BoxFit.cover,
                 ),

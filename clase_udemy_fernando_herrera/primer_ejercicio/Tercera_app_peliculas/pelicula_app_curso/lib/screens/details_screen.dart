@@ -3,9 +3,10 @@ import 'package:pelicula_app_curso/models/models.dart';
 import 'package:pelicula_app_curso/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    // TODO: Cambiar luego por una instancia de movie
     final Movie movie = ModalRoute.of(context)!.settings.arguments as Movie;
 
     return Scaffold(
@@ -15,8 +16,6 @@ class DetailsScreen extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate([
           _PosterAndTitle(movie),
-          _Overview(movie),
-          _Overview(movie),
           _Overview(movie),
           CastingCards(movie.id)
         ]))
@@ -87,7 +86,7 @@ class _PosterAndTitle extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           ConstrainedBox(
             constraints: BoxConstraints(maxWidth: size.width - 190),
             child: Column(
@@ -103,8 +102,9 @@ class _PosterAndTitle extends StatelessWidget {
                     maxLines: 2),
                 Row(
                   children: [
-                    Icon(Icons.star_outline, size: 15, color: Colors.grey),
-                    SizedBox(width: 5),
+                    const Icon(Icons.star_outline,
+                        size: 15, color: Colors.grey),
+                    const SizedBox(width: 5),
                     Text('${movie.voteAverage}', style: textTheme.caption)
                   ],
                 )
@@ -125,7 +125,7 @@ class _Overview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: Text(
         movie.overview,
         textAlign: TextAlign.justify,
