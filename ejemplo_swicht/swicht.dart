@@ -1,8 +1,8 @@
 void main() {
-  var nombre = ("yir");
+  String nombre = ("yir");
 
-  var trabajo = ("fisioterapeuta");
-  var descripcion = ("mide 150 y come como loca");
+  String trabajo = ("fisioterapeuta");
+  String descripcion = ("mide 150 y come como loca");
   switch (nombre) {
     case "edwin":
       print("esta dormido como siempre");
